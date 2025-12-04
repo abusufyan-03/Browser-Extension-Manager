@@ -1,0 +1,30 @@
+@media (min-width: 575px) {
+  .extension-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 767px) {
+  .extension-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container{
+    padding: 40px 96px
+  }
+
+  }
+
+@media (min-width: 768px){
+    .extension-toolbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 70px;
+        margin-bottom: 33px;
+    }
+
+}
