@@ -17,7 +17,7 @@ data.forEach((element, index) => {
             <div class="extension-control">
               <button>Remove</button>
               <div class="toggleUi">
-                <input type="checkbox" id="${index}">
+                <input type="checkbox" id="${index}" ${element.isActive? "checked": ""}>
                 <label for="${index}" class="toggleSwitch"></label>
               </div>
             </div>
