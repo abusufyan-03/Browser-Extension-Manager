@@ -1,7 +1,7 @@
 import data from "./data.json" with {type: "json"};
 const extensionList = document.querySelector('.extension-list');
 let html = '';
-data.forEach((element) => {
+data.forEach((element, index) => {
     html += `
     <div class="extension-card">
             <div class="extension-data">
@@ -17,8 +17,8 @@ data.forEach((element) => {
             <div class="extension-control">
               <button>Remove</button>
               <div class="toggleUi">
-                <input type="checkbox" id="checkboxInput1">
-                <label for="checkboxInput1" class="toggleSwitch"></label>
+                <input type="checkbox" id="${index}">
+                <label for="${index}" class="toggleSwitch"></label>
               </div>
             </div>
           </div>
