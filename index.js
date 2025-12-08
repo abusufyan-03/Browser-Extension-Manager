@@ -1,8 +1,14 @@
 import data from "./data.json" with {type: "json"};
 const extensionList = document.querySelector('.extension-list');
-let html = '';
-data.forEach((element, index) => {
-    html += `
+const tabBtns = document.querySelectorAll('.tab-btn');
+const allTabBtn = document.getElementById('all');
+const activeTabBtn = document.getElementById('active');
+const inactiveTabBtn = document.getElementById('inactive');
+
+function renderExtensions(data) {
+    let html = '';
+    data.forEach((element, index) => {
+        html += `
     <div class="extension-card">
             <div class="extension-data">
               <img src="${element.logo}">
@@ -23,5 +29,45 @@ data.forEach((element, index) => {
             </div>
           </div>
     `;
-    extensionList.innerHTML = html;
+        extensionList.innerHTML = html;
+    });
+}
+renderExtensions(data);
+
+// data change
+
+extensionList.addEventListener('click', function(e){
+    if(e.target.tagName === 'INPUT'){
+        let index = Number(e.target.id);
+        data[index].isActive = e.target.checked;
+    }
 })
+
+
+/* // Tab Logic
+
+allTabBtn.addEventListener('click', function(){
+    extensionList.innerHTML = '';
+    renderExtensions(data);
+});
+
+activeTabBtn.addEventListener('click', function(){
+    extensionList.innerHTML = '';
+    const activeExtensions = data.filter((d) => d.isActive === true);
+    renderExtensions(activeExtensions);
+});
+
+inactiveTabBtn.addEventListener('click', function(){
+    extensionList.innerHTML = '';
+    const inactiveExtensions = data.filter((d)=> d.isActive === false);
+    renderExtensions(inactiveExtensions);
+})
+
+tabBtns[0].classList.add('active')
+tabBtns.forEach((tab)=> {
+    tab.addEventListener('click', function(){
+        tabBtns.forEach((t)=> t.classList.remove('active'))
+        tab.classList.add('active')
+    })
+})
+ */
