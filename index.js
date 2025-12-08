@@ -21,7 +21,7 @@ function renderExtensions(data) {
             </div>
 
             <div class="extension-control">
-              <button>Remove</button>
+              <button id="${index}">Remove</button>
               <div class="toggleUi">
                 <input type="checkbox" id="${index}" ${element.isActive? "checked": ""}>
                 <label for="${index}" class="toggleSwitch"></label>
@@ -40,6 +40,13 @@ extensionList.addEventListener('click', function(e){
     if(e.target.tagName === 'INPUT'){
         let index = Number(e.target.id);
         data[index].isActive = e.target.checked;
+    }
+    if(e.target.tagName === 'BUTTON'){
+        let removedExtensionId = Number(e.target.id);
+        console.log(removedExtensionId)
+        alert("clicked removed")
+        data.splice(removedExtensionId, 1);
+        renderExtensions(data);
     }
 })
 
