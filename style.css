@@ -118,7 +118,7 @@ body {
     color: var(--bg-clr);
 } */
 
-.active {
+.active:focus {
     background-color: var(--red-500);
     color: var(--bg-clr);
 }
