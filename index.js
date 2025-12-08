@@ -44,7 +44,7 @@ extensionList.addEventListener('click', function(e){
 })
 
 
-/* // Tab Logic
+// Tab Logic
 
 allTabBtn.addEventListener('click', function(){
     extensionList.innerHTML = '';
@@ -70,4 +70,3 @@ tabBtns.forEach((tab)=> {
         tab.classList.add('active')
     })
 })
- */

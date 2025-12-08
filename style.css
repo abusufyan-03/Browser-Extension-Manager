@@ -113,7 +113,12 @@ body {
     cursor: pointer;
 }
 
-.extension-filter button:focus{
+/* .extension-filter button:focus{
+    background-color: var(--red-500);
+    color: var(--bg-clr);
+} */
+
+.active {
     background-color: var(--red-500);
     color: var(--bg-clr);
 }
