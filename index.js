@@ -81,20 +81,20 @@ tabBtns.forEach((tab) => {
 
 
 /* Dark mode */
-let darkmode = localStorage.getItem('darkmode');
+let darkmode = localStorage.getItem('dark');
 
 const enableDarkmode = () => {
   document.body.classList.add('darkmode');
-  localStorage.setItem('darkmode', 'active');
+  localStorage.setItem('dark', 'active');
 }
 const disableDarkmode = () => {
   document.body.classList.remove('darkmode');
-  localStorage.setItem('darkmode', null)
+  localStorage.setItem('dark', null)
 }
 
-if (darkmode === 'acitve') enableDarkmode();
+if (darkmode === 'active') enableDarkmode();
 
 themSwitch.addEventListener('click', function () {
-  darkmode = localStorage.getItem('darkmode')
+  darkmode = localStorage.getItem('dark')
   darkmode !== 'active' ? enableDarkmode() : disableDarkmode()
 })
