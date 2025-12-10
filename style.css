@@ -14,6 +14,9 @@
     --toggle-bg-clr: hsl(0, 0%, 78%);
     --text-muted-clr: hsl(225, 23%, 24%);
     --bg-clr: hsl(200, 60%, 99%);
+    --bg-linear: linear-gradient(180deg, hsl(215, 74%, 95%) 0%, hsl(185, 48%, 95%) 100%);
+    --them-switch-bg: #EDEDED;
+
 
     /* font sizes */
     --fs-xs: 14px;
@@ -36,9 +39,18 @@
     --box-shadow-sm: 0 4px 4px rgba(149, 157, 165, .2);
 }
 
+.darkmode {
+     /* Dark mode */
+    --bg-clr: #1F2535;
+    --bg-linear: linear-gradient(180deg, hsl(215, 50%, 18%) 0%, hsl(185, 45%, 18%) 100%);
+    --btn-bg-clr: #2F354B;
+    --them-switch-bg: #2F354B;
+    --text-muted-clr: white;
+}
+
 body {
     font-family: "noto-sans", sans-serif, system-ui;
-    background-image: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    background-image: var(--bg-linear);
     color: var(--text-muted-clr); 
 }
 
@@ -68,14 +80,25 @@ body {
     align-items: center;
 }
 
-.theme {
+.theme-switch {
     display: flex;
-    background-color: #EDEDED;
+    background-color: var(--them-switch-bg);
     /* padding: 12px; */
     padding: var(--space-md);
     /* border-radius: 16px; */
     border-radius: var(--radius-lg);
     cursor: pointer;
+}
+.theme-switch img:last-child {
+    display: none;
+}
+
+.darkmode #dark{
+    display: none;
+}
+
+.darkmode #light{
+    display: block;
 }
 
 /* -------------------------header finished----------------------- */
@@ -107,7 +130,7 @@ body {
     background-color: var(--btn-bg-clr);
     /* border-radius: 20px; */
     border-radius: var(--radius-xl);
-    /* color: white; */
+    color: var(--text-muted-clr);
     font-size: var(--fs-sm);
     border: 1px solid #d6e2f5;
     cursor: pointer;
@@ -118,7 +141,7 @@ body {
     color: var(--bg-clr);
 } */
 
-.active:focus {
+.tab-btn.active {
     background-color: var(--red-500);
     color: var(--bg-clr);
 }
@@ -178,6 +201,7 @@ body {
     background-color: var(--bg-clr);
     font-weight: 600;
     cursor: pointer;
+    color: var(--text-muted-clr);
 }
 
 .extension-control button:hover{
@@ -207,7 +231,7 @@ input[type="checkbox"] {
     position: absolute;
     height: 16px;
     width: 16px;
-    background-color: var(--bg-clr);
+    background-color: white;
     border-radius: 50%;
     left: 2px;
     /* right: 2px; */
