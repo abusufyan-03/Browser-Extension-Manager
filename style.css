@@ -192,6 +192,10 @@ body {
     line-height: 1.5;
 }
 
+.extension-info h1 {
+    font-size: 1.25rem;
+}
+
 .extension-control button{
     border: none;
     /* padding: 8px 16px; */
