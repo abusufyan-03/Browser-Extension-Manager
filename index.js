@@ -12,9 +12,9 @@ function renderExtensions(data) {
     html += `
     <div class="extension-card">
             <div class="extension-data">
-              <img src="${element.logo}">
+              <img src="${element.logo}" alt="${element.name}">
               <div class="extension-info">
-                <h3>${element.name}</h3>
+                <h1>${element.name}</h1>
                 <p class="extension-description">
                   ${element.description}
                 </p>
