@@ -85,10 +85,12 @@ let darkmode = localStorage.getItem('dark');
 
 const enableDarkmode = () => {
   document.body.classList.add('darkmode');
+  themSwitch.setAttribute('aria-pressed', 'true')
   localStorage.setItem('dark', 'active');
 }
 const disableDarkmode = () => {
   document.body.classList.remove('darkmode');
+  themSwitch.setAttribute('aria-pressed', 'false')
   localStorage.setItem('dark', null)
 }
 
