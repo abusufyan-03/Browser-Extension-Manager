@@ -74,6 +74,10 @@ body {
 
 
 }
+
+.logo-svg {
+    color: var(--text-muted-clr);
+}
 .extension{
     display: flex;
     justify-content: space-between;
